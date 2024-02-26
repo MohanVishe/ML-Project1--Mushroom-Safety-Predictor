@@ -7,7 +7,7 @@ echo [$(date)]:"START"
 
 echo "Creating Environment and installing Packages"
 # conda env create -p MLp1Env --file "requirements/environment.yml"
-conda create -p MLp1Env python -y
+conda create -p MLp1Env python=3.12 -y
 
 
 echo "Activating Environment"
@@ -20,7 +20,7 @@ python "requirements\template.py"
 
 
 echo "Installing Local Package"
-python setup.py install
+pip install -e .
 
 
 echo [$(date)]: "END"
